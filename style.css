@@ -1,0 +1,55 @@
+#navlist li{
+    margin:0;
+    padding:0;
+    list-style-type: none;
+    position: absolute;
+}
+#navlist li, #navlist a{
+    height: 45px;
+    display: block;
+}
+#home{
+    background: url(image1.gif) 0 0;
+    width:45px;
+    background-repeat: no-repeat;
+}
+#previous{
+    background: url(image1.gif) -46px 0;
+    width:45px;
+    background-repeat: no-repeat;
+   left:140px;
+}
+#next{
+    background: url(image1.gif) -90px 0;
+    width:45px;
+    background-repeat: no-repeat;
+    left:94px;
+}
+
+body{
+    counter-reset: main;
+}
+h1::before{
+    counter-increment:main;
+    content:"main concept" counter(main) " : ";
+}
+h1{
+    counter-reset: sub1;
+}
+h2::before{
+    counter-increment: sub1;
+    content:counter(main) " . " counter(sub1) " : ";
+
+}
+p{
+    background-color: rgb(65, 42, 165);
+    text-align: center;
+}
+ol{
+    counter-reset: list;
+    list-style-type: none;
+}
+ol li::before{
+    counter-increment: list;
+    content:counters(list, " . ") "  ";
+}
